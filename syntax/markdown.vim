@@ -83,4 +83,8 @@ function! s:MarkdownHighlightSources(force)
     endfor
 endfunction
 
+if win_gettype() == "popup"
+    %s/\s\+$//
+endif
+
 call s:MarkdownHighlightSources(1)
